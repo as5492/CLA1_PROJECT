@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main()
+{
+    int i, j, n;
+    int matrix[10][10];
+    int sumD;
+
+    printf("Enter size of matrix : ");
+    scanf("%d", &n);
+
+    /* Input data in matrix */
+    for (i = 0; i < n; i++)
+    {
+        for (j = 0; j < n; j++)
+        {
+            printf("Enter data in [%d][%d]: ", i, j);
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    printf("\n");
+
+    /* Display the matrix */
+    for (i = 0; i < n; i++)
+    {
+        for (j = 0; j < n; j++)
+        {
+            printf("%d\t", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    /* Find the diagonal sum of matrix */
+    sumD = 0;
+    for (i = 0; i < n; i++)
+    {
+        sumD += matrix[i][i];
+    }
+
+    printf("\nSum of main diagonal = %d", sumD);
+
+    return 0;
+}
